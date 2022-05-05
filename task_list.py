@@ -10,7 +10,8 @@ tasks = [
 
 ## Get a list of uncompleted tasks
 def get_uncompleted_tasks(list):
-    pass
+    for task in tasks:
+        
 
 ## Get a list of completed tasks
 def get_completed_tasks(list):
