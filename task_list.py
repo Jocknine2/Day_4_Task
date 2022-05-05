@@ -1,7 +1,3 @@
-from start_code.app import *
-from start_code.output import *
-
-
 tasks = [
     {"description": "Wash Dishes", "completed": False, "time_taken": 10},
     {"description": "Clean Windows", "completed": False, "time_taken": 15},

@@ -1,7 +1,3 @@
-from start_code.app import *
-from start_code.task_list import *
-
-
 def mark_task_complete(task):
     task["completed"] = True
 
