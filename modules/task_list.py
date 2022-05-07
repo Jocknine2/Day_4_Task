@@ -1,11 +1,3 @@
-tasks = [
-    {"description": "Wash Dishes", "completed": False, "time_taken": 10},
-    {"description": "Clean Windows", "completed": False, "time_taken": 15},
-    {"description": "Make Dinner", "completed": True, "time_taken": 30},
-    {"description": "Feed Cat", "completed": False, "time_taken": 5},
-    {"description": "Walk Dog", "completed": True, "time_taken": 60},
-]
-
 # Functions to complete:
 
 ## Get a list of uncompleted tasks
@@ -19,8 +11,6 @@ def get_uncompleted_tasks(list):
     return found
 
 
-print(get_uncompleted_tasks(tasks))
-
 ## Get a list of completed tasks
 def get_completed_tasks(list):
     found = []
@@ -32,21 +22,14 @@ def get_completed_tasks(list):
     return found
 
 
-print(get_completed_tasks(tasks))
-print("_______________________________________")
-
-
 ## Get tasks where time_taken is at least a given time
 def get_tasks_taking_at_least(list, time):
+    tasks = []
+    for task in list:
+        if task["time_taken"] >= time:
+            tasks.append(task)
 
-    for times in list:
-        if times["time_taken"] == time:
-
-            return times
-
-
-print(get_tasks_taking_at_least(tasks, 5))
-print("_______________________________________")
+    return tasks
 
 
 ## Find a task with a given description
@@ -56,9 +39,7 @@ def get_task_with_description(list, description):
         if task["description"] == description:
 
             return task
-
-
-print(get_task_with_description(tasks, "Make Dinner"))
+    return None
 
 
 # Extention (Function):
@@ -72,7 +53,4 @@ def get_tasks_by_status(list, status):
         if stat["completed"] == status:
             status_list.append(stat)
 
-    return stat and print(status_list)
-
-
-print(get_tasks_by_status(tasks, True))
+    return stat
